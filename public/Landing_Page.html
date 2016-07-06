@@ -23,6 +23,7 @@ This sample showcases how to build a product page in AMP HTML.
 <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
 <style amp-custom>
 header {
@@ -61,7 +62,6 @@ amp-lightbox {
     background-repeat: no-repeat;
     background-image: -webkit-image-set(url(/img/ic_play_circle_filled_black_1x_web_24dp.png) 1x,url(/img/ic_play_circle_filled_black_2x_web_24dp.png) 2x);
 }
-
 .amp-youtube-container {
     display: flex;
     align-items: center;
@@ -102,15 +102,44 @@ amp-accordion p {
 .text-input {
     width: 100%;
     float: left;
-    height: 43px;
-    font-size: 16px;
     border: 1px solid;
+    border-color: #ddd;
+    height: 43px;
+    padding: 0px;
 }
 .submit-input {
     position: absolute;
     right: 10px;
-    height: 43px;
     font-size: 16px;
+    margin-top: 1px;
+}
+fieldset {
+    border: none;
+}
+.button {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    background: 0 0;
+    background-color: #eb407a;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0 16px;
+    display: inline-block;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    height: 43px;
+    min-width: 64px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    line-height: 36px;
+    text-decoration: none;
 }
 </style>
 
@@ -158,7 +187,7 @@ amp-accordion p {
         <label>
             <input type="text" class="text-input" name="Product" required>
         </label>
-        <input type="submit" class="submit-input" value="Search">
+        <input type="submit" class="submit-input button" value="Search">
     </fieldset>
 </form>
 
@@ -167,8 +196,7 @@ amp-accordion p {
         <amp-img src="/img/gold_nexus.png" width="512" height="384" layout="responsive"></amp-img>
         <amp-img src="/img/silver_nexus.png" width="512" height="384" layout="responsive"></amp-img>
     </amp-carousel>
-
-   
+      
 
 <!-- #### Social -->
 <!-- The Social Share extension provides a common interface for share buttons. Learn more about `amp-social-share` [here](/components/amp-social-share/). </a> -->
