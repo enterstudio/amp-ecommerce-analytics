@@ -45,6 +45,40 @@ header .call-to-action {
 header a {
     float: right;
 }
+body {
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    text-align: justify;
+}
+
+body a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p, h1, h2, h3, h5, h6, figcaption {
+  padding: 0 16px;
+      font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-size: 45px;
+    line-height: 48px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+.product-description {
+    font-size: 14px;
+    letter-spacing: 0;
+    margin-bottom: 8px;
+    padding: 0 16px;
+        font-weight: 400;
+    line-height: 24px;
+}
+
+.play {
+    padding-left: 28px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-image: -webkit-image-set(url(/img/ic_play_circle_filled_black_1x_web_24dp.png) 1x,url(/img/ic_play_circle_filled_black_2x_web_24dp.png) 2x);
+}
 amp-carousel {
     clear: both;
 }
@@ -53,6 +87,9 @@ amp-lightbox {
     width: 100%;
     height: 100%;
     position: absolute;
+}
+amp-accordion h4 {
+    font-size: 18px;
 }
 .play {
     padding-right: 28px;
@@ -91,12 +128,66 @@ amp-lightbox {
 .related:hover {
     background-color: #ccc;
 }
+
+.button {
+   
+    background: 0 0;
+    background-color: #eb407a;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0 16px;
+    display: inline-block;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    height: 43px;
+    min-width: 64px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    line-height: 43px;
+    text-decoration: none;
+}
 amp-accordion h4 {
     padding: 8px;
 }
 amp-accordion p {
     padding: 8px;
     font-size: 16px;
+}
+
+.submit-input {
+    position: absolute;
+    right: 10px;
+    font-size: 16px;
+    margin-top: 1px;
+}
+
+.call-to-action {
+    float: right;
+    margin: 16px;
+}
+
+.card {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+  float: none; 
+  overflow: hidden;
+  padding: 8px;
+  border-radius: 2px;
+}
+
+#video-container{
+    margin: 16px;
+}
+
+.product {
+    margin-bottom: 8px;
 }
 </style>
 
@@ -142,9 +233,11 @@ amp-accordion p {
         <h2>Nexus 6P</h2>
         <!-- This button adds the item to the shopping cart. Pressing this button should lead to a the shopping cart page on your normal website and the cart should be prefilled with the current item. -->
         <div class="call-to-action">
-            <a href="/shopping-cart-sample.html" class="button button-primary">Buy</a>
+            <a href="/shopping-cart-sample.html" class="button">Buy</a>
         </div>
     </header>
+
+    <h4 class="product-description">A 5.7-inch, high-resolution WQHD AMOLED display and front-facing stereo speakers — all housed in a contoured aluminum body.</h4>
 
     <!-- #### Image Gallery -->
     <!-- The `amp-carousel` works very well for product image galleries. Learn more about `amp-carousel` [here](/advanced/image_galleries_with_amp-carousel/). -->
@@ -159,7 +252,7 @@ amp-accordion p {
     <!-- AMP supports a wide range of video platforms. Here we are using `amp-youtube` to show a product video. You can find an overview of all supported video platforms [here](/advanced/integrating_videos_in_amp_an_overview/).
 
     In this sample we don't embed the video directly into the page, but instead show it in a lightbox using the `amp-lightbox` component. Learn more about `amp-lightbox` [here](/components/amp-lightbox/).  -->
-    <div>
+    <div id="video-container">
         <a on="tap:watch-video-lightbox"
         role="button"
         class="button button-secondary play"
@@ -205,7 +298,7 @@ amp-accordion p {
     height="33"></amp-social-share>
 </p>
 
-<h4>A 5.7-inch, high-resolution WQHD AMOLED display and front-facing stereo speakers — all housed in a contoured aluminum body.</h4>
+
 
 <!-- #### Collapsibles/Accordion -->
 <!-- Use `amp-accordion` to hide and show additional data about your product. Learn more about `amp-accordion` [here](/components/amp-accordion/). -->
@@ -240,7 +333,7 @@ amp-accordion p {
     layout=responsive
     src="/json/related_products.json">
     <template type="amp-mustache">
-        <a class="card related" href={{url}}>
+        <a class="card related product" href={{url}}>
             <amp-img width="100"
             height="75"
             src="{{src}}"></amp-img>
