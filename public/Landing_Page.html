@@ -198,6 +198,10 @@ fieldset {
 .price {
     font-weight: bold;
 }
+
+.deal_height {
+    max-height: 100px;
+}
 </style>
 
 <!-- #### Metadata -->
@@ -258,7 +262,7 @@ fieldset {
 
 <!-- #### Related products -->
 <!-- Use `amp-list` to show a list of related products. Learn more about `amp-list` [here](/components/amp-list/) -->
-<ul>
+<ul class="deal_height">
     <amp-list width=300
     height=100
     layout=responsive
@@ -282,7 +286,7 @@ fieldset {
 <!-- Use `amp-list` to show a list of related products. Learn more about `amp-list` [here](/components/amp-list/) -->
 <ul>
     <amp-list width=300
-    height=100
+    height=100 layout=responsive
     src="/json/accessories_deals.json">
     <template type="amp-mustache">
         <a class="deal card related" href={{url}}>
