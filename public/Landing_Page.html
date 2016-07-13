@@ -174,6 +174,20 @@ fieldset {
   padding: 8px;
   border-radius: 2px;
 }
+
+.layout-row {
+    flex-direction: row;
+    display: flex;
+}
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
+}
+
+.layout-margin {
+    margin: 4px;
+}
 </style>
 
 <!-- #### Metadata -->
@@ -227,6 +241,7 @@ fieldset {
     <amp-carousel width="512" height="384" layout="responsive" type="slides" autoplay>
         <amp-img src="/img/Sale1.jpg" width="512" height="384" layout="responsive"></amp-img>
         <amp-img src="/img/Sale2.jpg" width="512" height="384" layout="responsive"></amp-img>
+        <amp-img src="/img/google_express.jpg" width="512" height="384" layout="responsive"></amp-img>
     </amp-carousel>
       
 <h3 class="title">Hot Deals</h3>
@@ -247,6 +262,14 @@ fieldset {
         </a>
     </template>
 </amp-list>
+</ul>
+<ul class="layout-row social-links">
+      <li class="layout-margin"><amp-social-share type="twitter" width="45" height="33"></amp-social-share></li>
+      <li class="layout-margin"><amp-social-share type="facebook" width="45" height="33" data-attribution=254325784911610></amp-social-share></li>
+      <li class="layout-margin"><amp-social-share type="gplus" width="45" height="33"></amp-social-share></li>
+      <li class="layout-margin"><amp-social-share type="email" width="45" height="33"></amp-social-share></li>
+      <li class="layout-margin"><amp-social-share type="pinterest" width="45" height="33"></amp-social-share></li>
+    </p>
 </ul>
 
 <!--
