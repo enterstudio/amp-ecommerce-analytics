@@ -27,21 +27,30 @@ This sample showcases how to build a product page in AMP HTML.
 
 <style amp-custom>
 header {
+    flex-flow: row wrap;
     display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     height: 100%;
 }
 header h2 {
-    flex: 2;
+    flex: 1;
+    order: 1;
     text-align: left;
+    margin-top: 0;
 }
 header .call-to-action {
     flex: 1;
+    order: 2;
     margin-left: auto;
     margin-right: 16px;
     padding-right: 16px;
+    margin-top: 0;
+    align-self: baseline;
+}
+
+header .logo {
+    flex: 1 100%;
+    padding: 16px;
 }
 header a {
     float: right;
@@ -201,6 +210,7 @@ amp-accordion p {
 .product {
     margin-bottom: 8px;
 }
+
 </style>
 
 <!-- #### Metadata -->
@@ -242,13 +252,15 @@ amp-accordion p {
 </head>
 <body>
     <header>
-        <h2>Nexus 6P</h2>
+        <div class="logo">
+ <amp-img src="/img/google_store.png" width="163" height="35"></amp-img>
+</div>
+ <h2>Nexus 6P</h2>
         <!-- This button adds the item to the shopping cart. Pressing this button should lead to a the shopping cart page on your normal website and the cart should be prefilled with the current item. -->
         <div class="call-to-action">
             <a href="/shopping-cart-sample.html" class="button">Buy</a>
         </div>
     </header>
-
     <h2 class="price-description">From 399.00$</h2>
     <h4 class="product-description">A 5.7-inch, high-resolution WQHD AMOLED display and front-facing stereo speakers — all housed in a contoured aluminum body.</h4>
 
